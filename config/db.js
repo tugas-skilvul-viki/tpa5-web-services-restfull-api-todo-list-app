@@ -1,7 +1,9 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 
-const db = mongoose.connect(
-  "mongodb+srv://vikiade00:viki123158@mycluster.805cqec.mongodb.net/db_todo_list"
-);
+const DB_URL = process.env.DB_URL || "mongodb:localhost/db_todo_list";
+
+const db = mongoose.connect(DB_URL);
 
 module.exports = db;
